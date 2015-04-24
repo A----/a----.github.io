@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="GitHubWebsite">
+<head>
+  <title>A----</title>
+
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
+  <link rel="stylesheet" type="text/css" href="bower_components/octicons/octicons/octicons.css" />
+
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+  <!--[if lt IE 9]>
+  <script src="bower_components/respond/dest/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body ng-controller="MainController">
+
+<div class="jumbotron" ng-show="user">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3 col-md-2">
+        <img class="img-responsive avatar" src="{{user.avatar_url}}" alt="Avatar" />
+      </div>
+      <div class="col-xs-9">
+        <h1>{{user.name}}</h1>
+        <div>
+          <a href="{{user.url}}"><span class="octicon octicon-mark-github"></span> GitHub profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="panel panel-default" ng-show="repositories">
+    <div class="panel-heading">
+      <h2><span class="octicon octicon-repo"></span> My projects</h2>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="repository in repositories">
+        <repository model="repository" />
+      </li>
+    </ul>
+  </div>
+
+  <div class="panel panel-default" ng-show="forks">
+    <div class="panel-heading">
+      <h2><span class="octicon octicon-repo-forked"></span> Projects I contributed to</h2>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="fork in forks">
+        <repository model="fork" />
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/gh3/gh3.js"></script>
+
+
+<script src="js/controller.main.js"></script>
+<script src="js/service.github.js"></script>
+<script src="js/directive.repository.js"></script>
+
+</body>
+</html>

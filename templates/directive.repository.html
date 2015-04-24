@@ -1,0 +1,9 @@
+<div>
+  <div class="pull-right">
+    <a href="{{model.html_url}}"><span class="octicon octicon-mark-github"></span> Repository</a><br/>
+    <a href="{{model.homepage}}" ng-show="model.homepage"><span class="octicon octicon-home"></span> Website</a>
+  </div>
+  <h3>{{model.name}} <small ng-show="model.parent">from
+    <a href="{{model.parent.html_url}}">{{model.parent.full_name}}</a><br/></small></h3>
+  <p class="text-muted">{{model.description}}</p>
+</div>

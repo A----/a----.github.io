@@ -1,0 +1,36 @@
+
+.avatar {
+  background-color: white;
+  border: lightgray 3px solid;
+  border-radius: 5%;
+}
+
+.panel h2,
+.panel h3 {
+  font-size: 100%;
+  font-weight: bold;
+  margin: inherit;
+}
+
+.panel h3 {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.panel h3 small {
+  font-size: 95%;
+}
+
+.list-group-item p {
+  margin-bottom: 0;
+}
+
+.ng-hide-add.ng-hide-add-active,
+.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+}
+
+.ng-hide {
+  opacity: 0;
+}
